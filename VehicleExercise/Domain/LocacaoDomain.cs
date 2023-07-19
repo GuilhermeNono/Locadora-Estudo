@@ -20,7 +20,7 @@ namespace VehicleExercise.Domain
         // Menor - Maior = 0
         // Maior - Menor = 1
         // Caso o valor MaximoPercorrido seja maior do que o Percorrido; A propriedade deverá retornar 0
-        public double ValorTotal { get => Divida(); }
+        public double ValorTotal { get => ValorKmAdicionalTotal + ValorDiariaTotal; }
         public bool Paga { get; set; }
         public Locatario Locatario { get; private set; }
         public PriceTableVeiculoDomain PrecoVeiculo { get; private set; }
@@ -29,11 +29,6 @@ namespace VehicleExercise.Domain
         {
             Locatario = locatario;
             PrecoVeiculo = precoVeiculo;
-        }
-
-        public double Divida()
-        {
-            return ValorKmAdicionalTotal + ValorDiariaTotal;
         }
     }
 }
